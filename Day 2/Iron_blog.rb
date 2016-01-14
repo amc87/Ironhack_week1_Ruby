@@ -29,6 +29,8 @@ class Blog
 			end
 			puts "*************"
 				puts single_post.text
+
+			pages
 		end
 
 		
@@ -40,7 +42,7 @@ class Blog
 	def pagination(starting_post)
 
 
-
+		puts "Next or previous?"
 		page_choice = gets.chomp
 		
 		if page_choice == "next"
@@ -53,7 +55,11 @@ class Blog
 
 	def pages
 
-		number_of_pages = (@posts.length / 3).round
+		number_of_pages = (@posts.length / 3.0).round
+
+		puts
+
+
 
 	end
 
