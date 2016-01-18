@@ -18,8 +18,9 @@ class HourlyEmployee < Employee
     def calculate_salary
       #returns the hours worked * hourly_rate
       total_pay = @hours_worked * @hourly_rate
-      pay_tax = total_pay * 1.18
-      puts pay_tax
+      pay_tax = (total_pay * 1.18).round(2)
+      puts "Payroll: #{pay_tax}€"
+       Emailing.new(@name)
     end
 end
 
@@ -34,8 +35,9 @@ class SalaryEmployee < Employee
     def calculate_salary
       #returns the hours worked * hourly_rate
       total_pay = @yearly_salary / 12
-      pay_tax = total_pay * 1.18
-      puts pay_tax
+      pay_tax = (total_pay * 1.18).round(2)
+      puts "Payroll: #{pay_tax}€"
+      Emailing.new(@name)
     end
 end
 
@@ -59,9 +61,16 @@ class MultiPaymentEmployee < Employee
       else
       	total_pay = 5000
       end
-      pay_tax = total_pay * 1.18
-      puts pay_tax
+      pay_tax = (total_pay * 1.18).round(2)
+      puts "Payroll: #{pay_tax}€"
+       Emailing.new(@name)
     end
+end
+
+class Emailing
+	def initialize(employee)
+		puts "Email to #{employee}"
+	end
 end
 
 
@@ -84,15 +93,10 @@ class Payroll
 
 
 		josh.calculate_salary
-		notify_employee(josh)
 		nizar.calculate_salary
-		notify_employee(nizar)
 		ted.calculate_salary
-		notify_employee(ted)
 		emily.calculate_salary
-		notify_employee(emily)
 		alvaro.calculate_salary
-		notify_employee(alvaro)
 
 	  end
 

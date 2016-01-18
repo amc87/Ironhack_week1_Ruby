@@ -24,6 +24,12 @@ homes = [
 
 ]
 
+puts homes[0].name
+puts homes[1].name
+puts homes[2].name
+puts homes[3].name
+puts homes[4].name
+
 ## Iteration 1
 
 def home_list(homes)
@@ -105,6 +111,5 @@ def price_filtering(homes, user_filter_price)
 
 end
 
-binding.pry
+# binding.pry
 
-puts "hola"

@@ -3,18 +3,14 @@ require 'pry'
 class ShoppingCart
 
 	def initialize
-
 		@costs = 0
-		
 		@price_table = {
-
 		:apple => 10,
 		:oranges => 5,
 		:grapes => 15,
 		:banana => 20,
 		:watermelon => 50,
 		}
-
 		@cart = {}
 	end
 
@@ -35,32 +31,24 @@ class ShoppingCart
 	end
 
 	def cost
-
 		total = 0
-
 		@cart.each do |key, value|
-
 			total_item_cost = value[1] * value[0]
 			total += total_item_cost
 		end
-
 		puts total
-
-		
 	end
 
 	def discount
 		@cart.each do |key, value|
 			if key == "apple" && value[1] == 2
+				
+			end
 		end
-
 	end
-
-
 end
 
 cart = ShoppingCart.new
-
 
 cart.add_item_to_cart(:apple)
 cart.add_item_to_cart(:apple)
